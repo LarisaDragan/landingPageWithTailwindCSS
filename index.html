@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing page with Tailwind CSS</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <!-- all the properties for css can be found explained on the tailwind documentation -->
+    <div
+      class="min-h-screen w-full bg-[url(/images/image.png)] bg-center bg-cover px-28 py-5 relative"
+    >
+      <nav class="flex items-center">
+        <!-- shows only on mobile and tablet -->
+        <div class="lg:hidden">
+          <button
+            id="menu-toggle"
+            class="text-white focus:outline-none text-2xl"
+          >
+            ☰
+          </button>
+        </div>
+
+        <img src="images/logo.png" alt="logo-image" class="w-40" />
+        <ul
+          id="menu"
+          class="hidden lg:flex flex-1 justify-center space-x-4 lg:space-x-8 text-white"
+        >
+          <!-- px-5===20px -->
+          <li class="inline-block px-5">
+            <a href="#" class="no-underline text-white">Home</a>
+          </li>
+          <li class="inline-block px-5">
+            <a href="#" class="no-underline text-white">About</a>
+          </li>
+          <li class="inline-block px-5">
+            <a href="#" class="no-underline text-white">Products</a>
+          </li>
+          <li class="inline-block px-5">
+            <a href="#" class="no-underline text-white">Contact</a>
+          </li>
+        </ul>
+        <img
+          src="images/cart.png"
+          alt="cart-image"
+          class="w-8 cursor-pointer"
+        />
+      </nav>
+
+      <div class="text-white mt-48 max-w-lg">
+        <h1
+          class="text-4xl md:text-5xl lg:text-6xl font-semibold md:leading-normal"
+        >
+          Groceries<br />delivery in <span class="font-light">15 mins</span>
+        </h1>
+        <p class="">
+          Lorem ipsum, dolor sit amet c quisquam nihil veniam? Eum nam molestias
+          quibusdam.
+        </p>
+
+        <div class="mt-10">
+          <a
+            href="#"
+            class="bg-yellow-300 rounded-3xl py-3 px-8 font-medium inline-block mr-4 hover:bg-transparent hover:border-yellow-300 duration-300 hover:border border border-transparent"
+            >Order Now</a
+          >
+          <a href="#"
+            >Download App
+        </div>
+      </div>
+
+      <img
+        src="images/grocery-image.png"
+        alt="human-img"
+        class="w-full xl:w-1/2 xl:absolute bottom-0 right-20"
+      />
+    </div>
+
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const menu = document.getElementById("menu");
+
+      menuToggle.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+        menu.classList.toggle("block");
+      });
+    </script>
+  </body>
+</html>
